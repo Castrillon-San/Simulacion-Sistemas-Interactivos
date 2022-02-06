@@ -20,18 +20,14 @@ public class MyTest : MonoBehaviour
 
     private void Update()
     {
-        float t = Time.deltaTime + range;
-        range = Mathf.Clamp01(t);
+        /*float t = Time.deltaTime + range;
+        range = Mathf.Clamp01(t);*/
         result3 = second.Lerp(first, range);
         result3.Draw(Color.magenta);
         first.Draw(Color.green);
         second.Draw(Color.red);
-        result2 = first.Diff(second).Escalar(range);
-        //result.Draw(Color.white);
-        // first.Draw(Color.yellow, second);
+        result2 = second.Diff(first).Escalar(range);
         result2.Draw(Color.cyan);
-       // first.Draw(Color.cyan, second);
-        //second.Draw(Color.yellow, result2);
-        //result3.Draw(Color.white);    
+        second.Draw(Color.yellow, result2);
     }
 }
